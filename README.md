@@ -10,3 +10,7 @@ run
 yarn start
 ```
 
+To add dependency:
+```sh
+yarn add <new-dependency>
+```
