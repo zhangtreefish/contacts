@@ -20,6 +20,7 @@ class ListContacts extends Component {
 			showingContacts = contacts
 		}
 		showingContacts = showingContacts.sort(sortBy('name'))
+		const clearFilter = () => this.setState({query:''})
 
 	    return (
 	    	<div className='list-contacts'>
@@ -30,6 +31,14 @@ class ListContacts extends Component {
 	    	 			value={query}
 	    	 			onChange={(e)=> this.updateQuery(e.target.value)}
 	    	 			placeholder='Filter Contacts' />
+	    	 	</div>
+	    	 	<div>
+	    	 		<span>showing {showingContacts.length} of {contacts.length} contacts </span>
+	    	 		{contacts.length !== showingContacts.length && (
+	    	 			<div className='showing-contacts'>
+	    	 				<button onClick={clearFilter}>Show All</button>
+	    	 			</div>
+	    	 		)}
 	    	 	</div>
 			  	<ol className='contact-list'>
 					{showingContacts.map(contact =>
