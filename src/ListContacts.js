@@ -24,13 +24,19 @@ class ListContacts extends Component {
 
 	    return (
 	    	<div className='list-contacts'>
-	    	 	<div>
+	    	 	<div className='list-contacts-top'>
 	    	 		<input
 	    	 			className='search-contacts'
 	    	 			type='text'
 	    	 			value={query}
 	    	 			onChange={(e)=> this.updateQuery(e.target.value)}
-	    	 			placeholder='Filter Contacts' />
+	    	 			placeholder='Filter Contacts'
+    	 			/>
+    	 			<a
+				    	href='#create'
+				    	onClick={this.props.onClickCreate}
+				    	className='add-contact'
+				    > Create Contact</a>
 	    	 	</div>
 	    	 	<div>
 	    	 		<span>showing {showingContacts.length} of {contacts.length} contacts </span>
@@ -53,7 +59,6 @@ class ListContacts extends Component {
 						</li>
 					)}
 			    </ol>
-			    <button><a href='#create' onClick={this.props.onClickCreate}> Create Contact</a></button>
 			</div>
 		)
 	}

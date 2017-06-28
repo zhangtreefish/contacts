@@ -93,7 +93,7 @@ body, .app {
   background-image: url('./icons/search.svg');
   background-repeat: no-repeat;
   background-position: 20px center;
-  background-size: 1.2em;
+  background-size: 1.4em;
   font-size: 1.2em;
   border: 0;
   outline: none;
@@ -106,7 +106,7 @@ body, .app {
   background-image: url('./icons/person-add.svg');
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 28px;
+  background-size: 38px;
   font-size: 0;
 }
 
