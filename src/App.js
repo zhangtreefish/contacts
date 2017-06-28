@@ -1,9 +1,13 @@
 import React, { Component } from 'react'
 import ListContacts from './ListContacts'
 import * as ContactsAPI from './utils/contactsAPI'
+import CreateContact from './CreateContact'
 
 class App extends Component {
-  state = { contacts: [] }
+  state = {
+    contacts: [],
+    screen: 'list'
+   }
 
   componentDidMount() {
     ContactsAPI.getAll().then(contacts =>
@@ -18,10 +22,22 @@ class App extends Component {
     ContactsAPI.remove(contact)
   }
 
+  goToCreate = () => {
+    this.setState({screen: 'create'})
+  }
+
   render() {
     return (
       <div className="App">
-        <ListContacts onDeleteContact={this.removeContact} contacts={this.state.contacts} />
+        {this.state.screen === 'list' && (
+          <ListContacts
+            onDeleteContact={this.removeContact}
+            contacts={this.state.contacts}
+            onClickCreate={this.goToCreate} />
+        )}
+        {this.state.screen === 'create' && (
+          <CreateContact onClickList={()=>this.setState({screen:'list'})} />
+        )}
       </div>
     )
   }

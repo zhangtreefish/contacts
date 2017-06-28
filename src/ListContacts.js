@@ -53,6 +53,7 @@ class ListContacts extends Component {
 						</li>
 					)}
 			    </ol>
+			    <button><a href='#create' onClick={this.props.onClickCreate}> Create Contact</a></button>
 			</div>
 		)
 	}
