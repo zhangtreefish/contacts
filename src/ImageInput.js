@@ -57,7 +57,6 @@ class ImageInput extends React.Component {
     if (file && file.type.match(/^image\//)) {
       readFileAsDataURL(file).then(originalURL => {
         resizeImage(originalURL, this.canvas, this.props.maxHeight).then(url => {
-          console.log('url', url)
           this.setState({ value: url })
         })
       })

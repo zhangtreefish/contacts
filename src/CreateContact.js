@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import ImageInput from './ImageInput'
-import * as ContactsAPI from './utils/contactsAPI'
 import formSerializer from 'form-serialize'
 
 class CreateContact extends Component {
