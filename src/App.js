@@ -23,6 +23,7 @@ class App extends Component {
   }
 
   createContact = contact => {
+    contact.id = contact.name
     ContactsAPI.create(contact).then(
       this.setState(state => ({
         contacts: state.contacts.concat([contact])
